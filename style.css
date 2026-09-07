@@ -1,0 +1,119 @@
+:root {
+  --bg: #1b1e23;
+  --panel: #23272e;
+  --display-sub: #7d8590;
+  --display-main: #f4f1ea;
+  --key-num-bg: #2e333b;
+  --key-num-bg-hover: #383e47;
+  --key-num-text: #f4f1ea;
+  --key-op-bg: #e8a33d;
+  --key-op-bg-hover: #f0b25a;
+  --key-op-text: #1b1e23;
+  --key-eq-bg: #3fb68b;
+  --key-eq-bg-hover: #55c79d;
+  --key-eq-text: #14201c;
+  --key-fn-text: #c6cbd1;
+  --key-fn-border: #3a3f47;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  font-family: 'Inter', sans-serif;
+}
+
+.calculator {
+  width: 320px;
+  background: var(--panel);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+}
+
+.display {
+  padding: 24px 12px 16px;
+  text-align: right;
+  font-family: 'IBM Plex Mono', monospace;
+  min-height: 88px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.display-sub {
+  font-size: 15px;
+  color: var(--display-sub);
+  min-height: 18px;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.display-main {
+  font-size: 40px;
+  font-weight: 500;
+  color: var(--display-main);
+  overflow-x: auto;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+}
+
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 8px;
+}
+
+button {
+  border: none;
+  border-radius: 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  height: 60px;
+  cursor: pointer;
+  transition: background 0.12s ease, transform 0.05s ease;
+}
+
+button:active { transform: scale(0.96); }
+
+.key-num {
+  background: var(--key-num-bg);
+  color: var(--key-num-text);
+}
+.key-num:hover { background: var(--key-num-bg-hover); }
+
+.key-fn {
+  background: transparent;
+  color: var(--key-fn-text);
+  border: 1px solid var(--key-fn-border);
+}
+.key-fn:hover { color: var(--display-main); border-color: var(--display-sub); }
+
+.key-op {
+  background: var(--key-op-bg);
+  color: var(--key-op-text);
+  font-weight: 600;
+}
+.key-op:hover { background: var(--key-op-bg-hover); }
+
+.key-op.active {
+  outline: 2px solid var(--display-main);
+  outline-offset: -2px;
+}
+
+.key-eq {
+  background: var(--key-eq-bg);
+  color: var(--key-eq-text);
+  font-weight: 600;
+}
+.key-eq:hover { background: var(--key-eq-bg-hover); }
+
+.span-2 { grid-column: span 2; }

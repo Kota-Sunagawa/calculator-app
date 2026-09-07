@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>シンプル電卓</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="calculator">
+  <div class="display">
+    <div class="display-sub" id="displaySub">&nbsp;</div>
+    <div class="display-main" id="displayMain">0</div>
+  </div>
+
+  <div class="keys">
+    <button class="key-fn" data-action="clear">C</button>
+    <button class="key-fn" data-action="backspace">⌫</button>
+    <button class="key-fn" data-action="percent">%</button>
+    <button class="key-op" data-op="÷">÷</button>
+
+    <button class="key-num" data-num="7">7</button>
+    <button class="key-num" data-num="8">8</button>
+    <button class="key-num" data-num="9">9</button>
+    <button class="key-op" data-op="×">×</button>
+
+    <button class="key-num" data-num="4">4</button>
+    <button class="key-num" data-num="5">5</button>
+    <button class="key-num" data-num="6">6</button>
+    <button class="key-op" data-op="−">−</button>
+
+    <button class="key-num" data-num="1">1</button>
+    <button class="key-num" data-num="2">2</button>
+    <button class="key-num" data-num="3">3</button>
+    <button class="key-op" data-op="+">+</button>
+
+    <button class="key-num span-2" data-num="0">0</button>
+    <button class="key-num" data-action="decimal">.</button>
+    <button class="key-eq" data-action="equals">=</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
