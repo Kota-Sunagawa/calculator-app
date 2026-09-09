@@ -24,12 +24,15 @@ function render() {
 // 数字ボタンが押された時の処理
 function inputDigit(digit) {
   if (state.overwrite) {
-    state.currentValue = digit === "00" ? "0" : digit;
+    state.currentValue = digit === '00' ? '0' : digit;
     state.overwrite = false;
   } else {
-    // 桁数が増えすぎないように少し制限をかける
     if (state.currentValue.replace('-', '').length >= 12) return;
-    state.currentValue = state.currentValue === '0' ? digit === "00" ? "0" : digit : state.currentValue + digit;
+    if (state.currentValue === '0') {
+      state.currentValue = digit === '00' ? '0' : digit;
+    } else {
+      state.currentValue = state.currentValue + digit;
+    }
   }
 }
 
